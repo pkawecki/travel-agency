@@ -4,6 +4,7 @@ import {getTripById} from '../../../redux/tripsRedux';
 import {getCountryByCode} from '../../../redux/countriesRedux';
 
 const mapStateToProps = (state, props) => {
+
   const trip = getTripById(state, props.match.params.id);
   const country = getCountryByCode(state, trip.country.code);
 

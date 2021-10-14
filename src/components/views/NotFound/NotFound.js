@@ -2,12 +2,14 @@ import React from 'react';
 import {Grid} from 'react-flexbox-grid';
 import Section from '../../layout/Section/Section';
 
-const NotFound = () => (
+
+const NotFound = (props) => {
+  console.log(props);
+ return (
   <Section>
     <Grid>
       <h1>Page not found :(</h1>
     </Grid>
-  </Section>
-);
-
+  </Section>)
+}
 export default NotFound;

@@ -5,7 +5,10 @@ export const getAllTrips = ({trips}) => trips;
 export const getFilteredTrips = ({trips, filters}) => {
   let output = trips;
 
+  console.log(filters);
   // filter by search phrase
+
+
   if(filters.searchPhrase){
     const pattern = new RegExp(filters.searchPhrase, 'i');
     output = output.filter(trip => pattern.test(trip.name));
@@ -21,21 +24,23 @@ export const getFilteredTrips = ({trips, filters}) => {
 };
 
 export const getTripById = ({trips}, tripId) => {
-  const filtered = trips;
+  // TODO - DONE filtering
+  let filtered = trips;
 
-  // TODO - filter trips by tripId
+  filtered = filtered.filter(tripElem => tripId===tripElem.id)
 
-  console.log('filtering trips by tripId:', tripId, filtered);
+ console.log('filtering trips by tripId:', tripId, filtered);
   return filtered.length ? filtered[0] : {error: true};
 };
 
 export const getTripsForCountry = ({trips}, countryCode) => {
-  const filtered = trips;
+  let filtered = trips;
 
-  // TODO - filter trips by countryCode
+
+  filtered = filtered.filter(trip => trip.country.code===countryCode);
 
   console.log('filtering trips by countryCode:', countryCode, filtered);
-  return filtered.length ? filtered : [{error: true}];
+  return filtered.length ? filtered : [{error: !true}];
 };
 
 /* ACTIONS */
