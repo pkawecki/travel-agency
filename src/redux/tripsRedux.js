@@ -5,20 +5,48 @@ export const getAllTrips = ({trips}) => trips;
 export const getFilteredTrips = ({trips, filters}) => {
   let output = trips;
 
-  console.log(filters);
+  // console.log('trips: ',trips);
+  //console.log('filters: ',filters);
+
+
   // filter by search phrase
-
-
   if(filters.searchPhrase){
     const pattern = new RegExp(filters.searchPhrase, 'i');
     output = output.filter(trip => pattern.test(trip.name));
   }
 
-  // TODO - filter by duration
+  output = output.filter(trip => 
+    trip.days <= filters.duration.to && 
+    trip.days >= filters.duration.from
+    )
 
-  // TODO - filter by tags
+  //FOREACH TRIP
+  output = output.filter(trip => {
+    let suitableByTags = true;
 
-  // TODO - sort by cost descending (most expensive goes first)
+    //MAP through tags in filters object
+    filters.tags.map(checkedTag =>{
+      
+      //if tag from filters in not present in trip change 'suitableByTags' variabe to 'false'
+       if (trip.tags.indexOf(checkedTag)<0){
+        suitableByTags = false;
+       }
+    })
+
+    //for each TRIP return bool value
+    return suitableByTags;
+  })
+
+  function compareTripsDescending(a,b){
+    let valA = parseFloat(a.cost.replace("$", '').replace(",",''));
+    let valB = parseFloat(b.cost.replace("$", '').replace(",",''));
+
+        return (valB-valA); 
+  }
+
+  
+  output = output.sort(compareTripsDescending);
+  console.log(output);
 
   return output;
 };
