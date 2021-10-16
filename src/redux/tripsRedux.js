@@ -43,10 +43,9 @@ export const getFilteredTrips = ({trips, filters}) => {
 
         return (valB-valA); 
   }
-
   
   output = output.sort(compareTripsDescending);
-  console.log(output);
+  // console.log(output);
 
   return output;
 };
