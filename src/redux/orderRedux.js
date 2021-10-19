@@ -1,6 +1,9 @@
 // selectors
 export const getOrder = ({order}) => order;
-export const getOrderOptions = ({order}) => order.options;
+export const getOrderOptions = ({order}) => {
+  console.log('order in orderFormRedux: ', order);
+  return ('order.options in redux: ', order.options)
+};
 
 // action name creator
 const reducerName = 'order';
