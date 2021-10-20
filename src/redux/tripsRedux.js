@@ -5,8 +5,8 @@ export const getAllTrips = ({trips}) => trips;
 export const getFilteredTrips = ({trips, filters}) => {
   let output = trips;
 
-  // console.log('trips: ',trips);
-  //console.log('filters: ',filters);
+  // 
+  //
 
 
   // filter by search phrase
@@ -45,7 +45,7 @@ export const getFilteredTrips = ({trips, filters}) => {
   }
   
   output = output.sort(compareTripsDescending);
-  // console.log(output);
+  // 
 
   return output;
 };
@@ -56,7 +56,7 @@ export const getTripById = ({trips}, tripId) => {
 
   filtered = filtered.filter(tripElem => tripId===tripElem.id)
 
- console.log('filtering trips by tripId:', tripId, filtered);
+ 
   return filtered.length ? filtered[0] : {error: true};
 };
 
@@ -66,7 +66,7 @@ export const getTripsForCountry = ({trips}, countryCode) => {
 
   filtered = filtered.filter(trip => trip.country.code===countryCode);
 
-  console.log('filtering trips by countryCode:', countryCode, filtered);
+  
   return filtered.length ? filtered : [{error: !true}];
 };
 

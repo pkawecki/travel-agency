@@ -1,7 +1,7 @@
 // selectors
 export const getOrder = ({order}) => order;
 export const getOrderOptions = ({order}) => {
-  console.log('order in orderFormRedux: ', order);
+  
   return ('order.options in redux: ', order.options)
 };
 

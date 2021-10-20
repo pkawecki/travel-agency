@@ -4,7 +4,7 @@ import Section from '../../layout/Section/Section';
 
 
 const NotFound = (props) => {
-  console.log(props);
+  
  return (
   <Section>
     <Grid>

@@ -15,7 +15,7 @@ class TripListOptions extends React.Component {
   }
 
   handleDuration(limitType, value){
-    console.log('Changing duration', limitType, value);
+    
     this.props.changeSearchDuration(limitType,value);
   }
 

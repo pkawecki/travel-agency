@@ -7,8 +7,8 @@ import {calculateTotal} from '../../../utils/calculateTotal';
 
 
 const OrderSummary = ({tripCost, options}) => {
-    console.log('tripCost in OrderSummary', tripCost)
-    console.log('options in OrderSummary', options)
+    
+    
     return (
         <h2 className={styles.component}>Total: <strong>{formatPrice(calculateTotal(tripCost, options))}</strong></h2>
         
