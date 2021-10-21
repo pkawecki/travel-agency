@@ -5,19 +5,20 @@ import OrderOptionDropdown from './OrderOptionDropdown';
 import OrderOptionCheckboxes from './OrderOptionCheckboxes';
 import OrderOptionIcons from "./OrderOptionIcons";
 import OrderOptionNumber from './OrderOptionNumber'
+import OrderOptionTextField from './OrderOptionTextField';
+import OrderOptionDatePicker from './OrderOptionDatePicker';
+
 const optionTypes ={
     dropdown: OrderOptionDropdown,
     icons: OrderOptionIcons,
     number: OrderOptionNumber,
     checkboxes: OrderOptionCheckboxes,
+    textField: OrderOptionTextField,
+    datePicaer: OrderOptionDatePicker,
 }
 const OrderOption = ({orderOptionContent, currentValue, setOrderOption}) => {
     const {name,type,id, ...otherProps} = orderOptionContent;
     const OptionComponent = optionTypes[type];
-
-   // console.log('currentValue in OrderOption',name,' ',currentValue);
-   // console.log('other props: ', otherProps);
-   // console.log('setOrderOption in OrderOption: ',setOrderOption);
 
     if(!OptionComponent){
         return null;
@@ -26,7 +27,7 @@ const OrderOption = ({orderOptionContent, currentValue, setOrderOption}) => {
         return(
             <div className={styles.component}>
                 <h3 className={styles.title}>{name}</h3>
-                <OptionComponent {...otherProps} 
+                <OptionComponent {...otherProps} currentValue={currentValue} 
                 setOptionValue={ (value) => setOrderOption({[id]:value})}/>
             </div>
         )
