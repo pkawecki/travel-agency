@@ -20,8 +20,8 @@ function OrderOptionCheckboxes({values, currentValue, setOptionValue}) {
         <div className={styles.checkboxes}>
              {values.map(valueElement => {
                 return (
-                <div>
-                    <label for={valueElement.id} key={valueElement.id}> 
+                <div key={valueElement.id}>
+                    <label key={valueElement.id}> 
                         <input 
                             type="checkbox" 
                             id={valueElement.id} 
