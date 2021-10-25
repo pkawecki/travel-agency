@@ -3,7 +3,7 @@ import {Grid} from 'react-flexbox-grid';
 import Section from '../../layout/Section/Section';
 
 
-const NotFound = (props) => {
+const NotFound = () => {
   
  return (
   <Section>

@@ -1,9 +1,8 @@
 import React from "react";
-import { setOrderOption } from "../../../redux/orderRedux";
 import styles from './OrderOption.module.scss';
 
 
-const OrderOptionNumber = ({currentValue, limits,setOptionValue, ...others}) => {
+const OrderOptionNumber = ({currentValue, limits,setOptionValue}) => {
     // console.log(currentValue);
     return(<div className={styles.number}>
         <input type="number" value={currentValue}

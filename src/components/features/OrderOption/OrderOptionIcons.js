@@ -13,7 +13,7 @@ const OrderOptionIcons =({values, required, setOptionValue, currentValue}) =>(
            styles.iconActive : null }`}
                  
                 key={valueElement.id}
-                onClick={(event)=> {
+                onClick={()=> {
                     // console.log('valueElement', valueElement);
                      (setOptionValue(valueElement.id))
                 }}
