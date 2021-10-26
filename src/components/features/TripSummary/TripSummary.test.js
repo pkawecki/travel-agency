@@ -3,7 +3,7 @@ import {shallow} from 'enzyme';
 import TripSummary from './TripSummary';
 
 const tags=['chuj','mnie','to'];
-describe.only('Component TripSummary', () => {
+describe.skip('Component TripSummary', () => {
 
     it ('should generate proper url link', () => {
         const chosenId = 'abcd';

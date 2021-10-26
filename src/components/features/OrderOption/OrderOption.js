@@ -16,12 +16,12 @@ const optionTypes ={
     text: OrderOptionText,
     date: OrderOptionDate,
 }
-const OrderOption = ({orderOptionContent, currentValue, setOrderOption}) => {
-    const {name,type,id, ...otherProps} = orderOptionContent;
+const OrderOption = ({type, orderOptionContent, currentValue, setOrderOption}) => {
+    const {name,id, ...otherProps} = orderOptionContent? orderOptionContent : {};
     const OptionComponent = optionTypes[type];
 
     if(!OptionComponent){
-        return null;
+        return <p>empty component</p>;
     }
     else {
         return(
